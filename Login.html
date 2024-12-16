@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Local Computer Repair and Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <button id="mode-toggle">Toggle Dark/Light Mode</button>
+</head>
+<body>
+    <header>
+        <h1>Local Computer Repair and Services</h1>
+        <p>Sign up & Login</p>
+        <nav>
+    <nav>
+        <ul>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course-details.html">Course Details</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+            
+        </ul>
+    </nav>
+    
+    <main class="container">
+    <section class="section-content">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-message"></p>
+    </section>
+</main>
+
+<script>
+    const form = document.getElementById('login-form');
+    const message = document.getElementById('login-message');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('test_db', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                message.textContent = 'Login successful!';
+                message.style.color = 'green';
+                // Redirect or perform additional actions
+            } else {
+                message.textContent = result.error;
+                message.style.color = 'red';
+            }
+        } catch (err) {
+            message.textContent = 'An error occurred. Please try again later.';
+            message.style.color = 'red';
+        }
+    });
+</script>

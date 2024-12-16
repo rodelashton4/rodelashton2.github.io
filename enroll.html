@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Local Computer Repair and Services</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+        <button id="mode-toggle">Toggle Dark/Light Mode</button>
+
+        
+<header>
+    <h1>Enroll</h1>
+    <p>Enrollment Form</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course-details.html">Course Details</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="enroll.html">Enroll</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:120px;height:40px;"src="https://www.clocklink.com/html5embed.php?clock=004&timezone=AMST&color=yellow&size=120&Title=&Message=&Target=&From=2024,1,1,0,0,0&Color=yellow"></iframe>
+    
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Form</title>
+    <style>
+        .thank-you-message {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            color: green;
+            font-size: 1.2em;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        form input, form select, form button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    <section class="section-content">
+        <h2>Enrollment Form</h2>
+        <p>Fill in the form below to enroll in our courses and kickstart your journey in computer repair.</p>
+
+        <div class="form-container">
+            <form id="enrollment-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="beginner">Beginner Computer Repair</option>
+                    <option value="intermediate">Intermediate Computer Repair</option>
+                    <option value="advanced">Advanced Computer Repair</option>
+                </select>
+
+                <label for="start-date">Preferred Start Date</label>
+                <input type="date" id="start-date" name="start-date" required>
+
+                <button type="submit">Enroll Now</button>
+            </form>
+        </div>
+
+        <!-- Thank You Message -->
+        <div id="thank-you-message" class="thank-you-message">
+            Thank you for enrolling in our computer repair course! We will contact you soon with further details.
+        </div>
+    </section>
+</main>
+
+<script>
+    // Get form and thank-you message elements
+    const form = document.getElementById('enrollment-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    // Add an event listener to handle form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent page reload on form submit
+
+        // Hide the form
+        form.style.display = 'none';
+
+        // Show the thank you message
+        thankYouMessage.style.display = 'block';
+    });
+</script>
+
+<a href="index.html" class="cta-button">Back to Home</a>
+
+<footer>
+    <p>&copy; 2024 Local Computer Repair and Services. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
